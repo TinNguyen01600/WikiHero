@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* border: 2px solid black; */
+}
+
+/***********************************************************************/
+/* Background image */
+body {
+    background: url('img/bg.jpg') no-repeat center center/cover;
+    height: 50vh;
+    background-attachment: fixed;
+}
+
+/***********************************************************************/
+/* Header Image */
+.center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.center img {
+    max-width: 20%;
+    max-height: 20%
+}
