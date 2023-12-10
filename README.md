@@ -1,4 +1,12 @@
-# React + Vite
+## Technology
+- JavaScript
+- React + Vite
+- HTML / CSS
+- Material UI
+- Axios
+- Redux Toolkit & React-Redux
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
