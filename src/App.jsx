@@ -1,13 +1,13 @@
 import './App.css'
 import Header from './components/Header'
-import CharacterGrid from './features/Character/CharacterGrid'
+import AllCharacters from './features/Character/AllCharacters'
 
 function App() {
 
   return (
     <>
       <Header />
-      <CharacterGrid />
+      <AllCharacters />
     </>
   )
 }
