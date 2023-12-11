@@ -25,3 +25,8 @@ body {
     max-width: 20%;
     max-height: 20%
 }
+/***********************************************************************/
+.pagination ul {
+    display: flex;
+    list-style-type: none;
+}

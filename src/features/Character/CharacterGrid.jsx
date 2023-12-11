@@ -1,7 +1,6 @@
 import CharacterItem from './CharacterItem'
 
 const CharacterGrid = ({ characters }) => {
-
     return (
         <>
             {characters.map(char => (
