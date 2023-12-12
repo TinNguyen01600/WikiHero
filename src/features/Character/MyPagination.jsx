@@ -1,22 +1,27 @@
 import { useSelector } from 'react-redux'
+import { Pagination, Stack } from '@mui/material'
 
 
-const MyPagination = () => {
-    const pageNumbers = []
+const MyPagination = ({ charsPerPage, paginate }) => {
     const characters = useSelector(state => state.character.characters)
-    for (let i = 1; i<= Math.ceil(characters.length / 15); i++) {
-        pageNumbers.push(i)
-    }
+    const numberOfPages = Math.ceil(characters.length / charsPerPage)
+
     return (
-        <nav className='pagination'>
-            <ul>
-                {pageNumbers.map(number => (
-                    <li key={number} style={{margin: '5px'}}>
-                        <a href="!#">{number}</a>
-                    </li>
-                ))}
-            </ul>
-        </nav>
+        <Stack
+            spacing={2}
+            sx={{
+                "& .MuiPaginationItem-root": {
+                    color: "#ffffff"
+                }
+            }}
+        >
+            <Pagination
+                count={numberOfPages}
+                color="warning"
+                variant='outlined'
+                onClick={(e) => paginate(e.target.innerText)}
+            />
+        </Stack>
     )
 }
 
