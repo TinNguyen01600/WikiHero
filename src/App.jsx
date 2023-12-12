@@ -2,11 +2,12 @@ import './App.css'
 import { useSelector, useDispatch } from 'react-redux'
 import { useEffect } from 'react'
 import { fetchAllCharacters } from './features/Character/characterSlice'
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Header from './components/Header'
-import AllCharacters from './features/Character/AllCharacters'
-import SortMenu from './features/SortMenu/SortMenu.jsx'
 import sortMenuSelect from './features/SortMenu/sortMenuSelect.js'
+import Detail from './features/Routing/Detail.jsx'
+import Home from './features/Routing/Home.jsx';
 
 function App() {
     const characters = useSelector(state => state.character.characters)
@@ -18,12 +19,12 @@ function App() {
 
     /********************************************************************************** */
     // Add new attribute 'overallPower' to char obj
-    const overallPower = (char) => { 
+    const overallPower = (char) => {
         const totalPower = Object.keys(char.powerstats).map(stat => char.powerstats[stat]).reduce((total, num) => total + num)
-        return Math.floor(totalPower/6)
+        return Math.floor(totalPower / 6)
     }
-    for (let i=0; i<results.length; i++) {
-        results[i] = {...results[i], overallPower: overallPower(results[i])}
+    for (let i = 0; i < results.length; i++) {
+        results[i] = { ...results[i], overallPower: overallPower(results[i]) }
     }
 
     /********************************************************************************** */
@@ -32,13 +33,13 @@ function App() {
 
     /********************************************************************************** */
     return (
-        <>
+        <Router>
             <Header />
-            <div className="container">
-                <SortMenu />
-            </div>
-            <AllCharacters characters={results}/>
-        </>
+            <Routes>
+                <Route exact path="/" element={<Home results={results}/>}/>
+                <Route exact path="/detail" element={<Detail />} />
+            </Routes>
+        </Router>
     )
 }
 
