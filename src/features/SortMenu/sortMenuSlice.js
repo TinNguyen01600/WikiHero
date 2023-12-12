@@ -5,20 +5,27 @@ const sortMenuSlice = createSlice({
     initialState: {
         name: true,
         overallPower: false,
+        speed: false,
+
         ascending: true,
         descending: false
     },
     reducers: {
-        ascendant: (state, action) => {
-            state.ascending = action.payload
-            state.descending = !action.payload
+        select: (state, action) => {
+            const keys = Object.keys(state).filter(key => (key !== 'ascending' && key!=='descending'))
+            keys.forEach(key => state[key] = false)
+            state[action.payload] = true
+        },
+        ascendant: (state) => {
+            state.ascending = true
+            state.descending = false
         }, 
-        descendant: (state, action) => {
-            state.descending = action.payload
-            state.ascending = !action.payload
+        descendant: (state) => {
+            state.descending = true
+            state.ascending = false
         }
     }
 })
 
-export const { ascendant, descendant } = sortMenuSlice.actions
+export const { ascendant, descendant, select } = sortMenuSlice.actions
 export default sortMenuSlice.reducer 
