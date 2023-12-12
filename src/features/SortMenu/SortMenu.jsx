@@ -48,6 +48,25 @@ const SortMenu = () => {
                     {sortMenu.overallPower ? "•  Overall Power" : "Overall Power"}
                 </MenuItem>
                 <Divider />
+                <MenuItem onClick={() => { setIsMenuOpen(false); dispatch(select('intelligence'))}}>
+                    {sortMenu.intelligence ? "•  Intelligence" : "Intelligence"}
+                </MenuItem>
+                <MenuItem onClick={() => { setIsMenuOpen(false); dispatch(select('strength'))}}>
+                    {sortMenu.strength ? "•  Strength" : "Strength"}
+                </MenuItem>
+                <MenuItem onClick={() => { setIsMenuOpen(false); dispatch(select('speed'))}}>
+                    {sortMenu.speed ? "•  Speed" : "Speed"}
+                </MenuItem>
+                <MenuItem onClick={() => { setIsMenuOpen(false); dispatch(select('durability'))}}>
+                    {sortMenu.durability ? "•  Durability" : "Durability"}
+                </MenuItem>
+                <MenuItem onClick={() => { setIsMenuOpen(false); dispatch(select('power'))}}>
+                    {sortMenu.power ? "•  Power" : "Power"}
+                </MenuItem>
+                <MenuItem onClick={() => { setIsMenuOpen(false); dispatch(select('combat'))}}>
+                    {sortMenu.combat ? "•  Combat" : "Combat"}
+                </MenuItem>
+                <Divider />
                 <MenuItem onClick={() => { setIsMenuOpen(false); dispatch(ascendant()); }}>
                     {sortMenu.ascending ? "•  Ascending" : "Ascending"}
                 </MenuItem>

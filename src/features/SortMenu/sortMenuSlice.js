@@ -5,7 +5,12 @@ const sortMenuSlice = createSlice({
     initialState: {
         name: true,
         overallPower: false,
+        intelligence: false,
+        strength: false,
         speed: false,
+        durability: false,
+        power: false,
+        combat: false,
 
         ascending: true,
         descending: false
