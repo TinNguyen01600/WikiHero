@@ -10,8 +10,11 @@ const MyPagination = ({ charsPerPage, paginate }) => {
         <Stack
             spacing={2}
             sx={{
+                alignItems: 'center',
+                height: '60px',
                 "& .MuiPaginationItem-root": {
-                    color: "#ffffff"
+                    color: "#ffffff",
+                    fontSize: '25px'
                 }
             }}
         >
@@ -19,6 +22,7 @@ const MyPagination = ({ charsPerPage, paginate }) => {
                 count={numberOfPages}
                 color="warning"
                 variant='outlined'
+                size='large'
                 onClick={(e) => paginate(e.target.innerText)}
             />
         </Stack>

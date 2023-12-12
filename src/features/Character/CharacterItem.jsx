@@ -7,7 +7,7 @@ const CharacterItem = ({ char }) => {
         const power = parseInt(char.powerstats.power)
         const combat = parseInt(char.powerstats.combat)
 
-        return  Math.floor((intelligence+strength+speed+durability+power+combat) / 6)
+        return Math.floor((intelligence + strength + speed + durability + power + combat) / 6)
     }
 
     return (
@@ -17,7 +17,15 @@ const CharacterItem = ({ char }) => {
                     <div className="card-front">
                         <img src={char.images.sm} alt="" />
                     </div>
-                    <div className="card-back">
+                    <div className="card-back" style={
+                        char.biography.publisher === 'DC Comics'
+                        ? { backgroundColor: '#0476F2'}
+                        : char.biography.publisher === 'Marvel Comics'
+                        ? { backgroundColor: '#9e1010' }
+                        : char.biography.publisher === 'Dark Horse Comics'
+                        ? { backgroundColor: '#bd5902' }
+                        : { backgroundColor: '#055902' }
+                    }>
                         <h1>{char.name}</h1>
                         <ul>
                             <li>Full Name: {char.biography.fullName ? char.biography.fullName : char.name}</li>
