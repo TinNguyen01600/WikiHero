@@ -1,17 +1,8 @@
-import { useSelector, useDispatch } from 'react-redux'
-import { useEffect, useState } from 'react'
-import { fetchAllCharacters } from './characterSlice'
+import {  useState } from 'react'
 import CharacterGrid from './CharacterGrid'
 import MyPagination from './MyPagination'
 
-const AllCharacters = () => {
-    const characters = useSelector(state => state.character.characters)
-    const dispatch = useDispatch()
-
-    useEffect(() => {
-        dispatch(fetchAllCharacters())
-    }, [])
-
+const AllCharacters = ({ characters }) => {
     // Change page
     const [currentPage, setCurrentPage] = useState(1)
     const charsPerPage = 12;

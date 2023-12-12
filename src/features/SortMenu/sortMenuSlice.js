@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const sortMenuSlice = createSlice({
     name: 'sortMenu',
     initialState: {
-        overallPower: true,
+        name: true,
+        overallPower: false,
         ascending: true,
         descending: false
     },
