@@ -16,6 +16,16 @@ function App() {
     let results = [...characters]
 
     /********************************************************************************** */
+    // Add new attribute 'overallPower' to char obj
+    const overallPower = (char) => { 
+        const totalPower = Object.keys(char.powerstats).map(stat => char.powerstats[stat]).reduce((total, num) => total + num)
+        return Math.floor(totalPower/6)
+    }
+    for (let i=0; i<results.length; i++) {
+        results[i] = {...results[i], overallPower: overallPower(results[i])}
+    }
+
+    /********************************************************************************** */
     // Sort characters with menu
     const sortMenu = useSelector(state => state.sortMenu)
     if (sortMenu.name) {

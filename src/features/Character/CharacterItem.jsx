@@ -1,15 +1,4 @@
 const CharacterItem = ({ char }) => {
-    const powerCalculate = (char) => {
-        const intelligence = parseInt(char.powerstats.intelligence)
-        const strength = parseInt(char.powerstats.strength)
-        const speed = parseInt(char.powerstats.speed)
-        const durability = parseInt(char.powerstats.durability)
-        const power = parseInt(char.powerstats.power)
-        const combat = parseInt(char.powerstats.combat)
-
-        return Math.floor((intelligence + strength + speed + durability + power + combat) / 6)
-    }
-
     return (
         <>
             <div className="card">
@@ -29,7 +18,7 @@ const CharacterItem = ({ char }) => {
                         <h1>{char.name}</h1>
                         <ul>
                             <li>Full Name: {char.biography.fullName ? char.biography.fullName : char.name}</li>
-                            <li>Overall Power: {powerCalculate(char)}</li>
+                            <li>Overall Power: {char.overallPower}</li>
                             <li>Publisher: {char.biography.publisher}</li>
                             <li>Alignment: {char.biography.alignment}</li>
                         </ul>
