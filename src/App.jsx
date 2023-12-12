@@ -32,12 +32,16 @@ function App() {
     results = sortMenuSelect(results)
 
     /********************************************************************************** */
+    // Select character for detail page
+    const selectedChar = useSelector(state => state.character.selectedChar)
+
+    /********************************************************************************** */
     return (
         <Router>
             <Header />
             <Routes>
                 <Route exact path="/" element={<Home results={results}/>}/>
-                <Route exact path="/detail" element={<Detail />} />
+                <Route exact path="/detail" element={<Detail char={selectedChar}/>} />
             </Routes>
         </Router>
     )

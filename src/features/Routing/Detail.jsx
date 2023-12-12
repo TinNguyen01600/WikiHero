@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
 
-const Detail = () => {
+const Detail = ({ char }) => {
     return (
         <>
-            <h4>Version 1.0.0</h4>
+            <h4 style={{color: 'white'}}>{char.name}</h4>
             <Link to="/">Go back</Link>
         </>
     )
