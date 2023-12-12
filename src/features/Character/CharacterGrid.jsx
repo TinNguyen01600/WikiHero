@@ -2,11 +2,11 @@ import CharacterItem from './CharacterItem'
 
 const CharacterGrid = ({ characters }) => {
     return (
-        <div style={{color: 'white'}}>
+        <section className='cards-grid'>
             {characters.map(char => (
                 <CharacterItem key={char.id} char={char} />
             ))}
-        </div>
+        </section>
     )
 }
 

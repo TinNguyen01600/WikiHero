@@ -14,7 +14,7 @@ const AllCharacters = () => {
 
     // Change page
     const [currentPage, setCurrentPage] = useState(1)
-    const charsPerPage = 6;
+    const charsPerPage = 12;
     const indexOfLastChar = currentPage * charsPerPage
     const indexOfFirstChar = indexOfLastChar - charsPerPage
     const currentChars = characters.slice(indexOfFirstChar, indexOfLastChar)
