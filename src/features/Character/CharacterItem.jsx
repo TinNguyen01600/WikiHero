@@ -1,7 +1,7 @@
 const CharacterItem = ({ char }) => {
     return (
         <>
-            <div className="card">
+            <div className="card" onClick={() => console.log(char)}>
                 <div className="card-inner">
                     <div className="card-front">
                         <img src={char.images.sm} alt="" />
@@ -13,7 +13,7 @@ const CharacterItem = ({ char }) => {
                         ? { backgroundColor: '#9e1010' }
                         : char.biography.publisher === 'Dark Horse Comics'
                         ? { backgroundColor: '#bd5902' }
-                        : { backgroundColor: '#055902' }
+                        : { backgroundColor: '#000000' }
                     }>
                         <h1>{char.name}</h1>
                         <ul>
