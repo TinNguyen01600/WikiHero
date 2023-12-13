@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import { fetchAllCharacters } from './features/Character/characterSlice'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import Header from './components/Header'
 import sortMenuSelect from './features/SortMenu/sortMenuSelect.js'
 import Detail from './features/Routing/Detail.jsx'
 import Home from './features/Routing/Home.jsx';
@@ -38,7 +37,6 @@ function App() {
     /********************************************************************************** */
     return (
         <Router>
-            <Header />
             <Routes>
                 <Route exact path="/" element={<Home results={results}/>}/>
                 <Route exact path="/detail" element={<Detail char={selectedChar}/>} />
