@@ -160,3 +160,24 @@ body {
     margin: 30px 30px 30px 0;
     padding-bottom: 30px;
 }
+
+/***********************************************************************/
+/* search bar */
+.search {
+    display: inline-flex;
+    margin: 20px;
+}
+
+input {
+    width: 700px;
+    height: 40px;
+    padding: 5px;
+}
+
+/***********************************************************************/
+/* Sort Menu and Search bar container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
