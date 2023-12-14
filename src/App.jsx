@@ -8,6 +8,7 @@ import Detail from './features/Routing/Detail.jsx'
 import Home from './features/Routing/Home.jsx';
 import Marvel from './features/Routing/Marvel.jsx';
 import DCComics from './features/Routing/DCComics.jsx'
+import DarkHorse from './features/Routing/DarkHorse.jsx';
 
 function App() {
     const dispatch = useDispatch()
@@ -22,6 +23,7 @@ function App() {
                 <Route exact path="/" element={<Home />}/>
                 <Route exact path="/marvel" element={<Marvel />} />
                 <Route exact path="/dccomics" element={<DCComics />} />
+                <Route exact path="/dark-horse" element={<DarkHorse />} />
                 <Route exact path="/detail" element={<Detail />} />
             </Routes>
         </Router>

@@ -31,6 +31,7 @@ const Home = () => {
             </div>
             <Link to="/marvel"><Button>Marvel</Button></Link>
             <Link to="/dccomics"><Button>DC Comics</Button></Link>
+            <Link to="/dark-horse"><Button>Dark Horse Comics</Button></Link>
             <AllCharacters characters={characters} />
         </>
     )
