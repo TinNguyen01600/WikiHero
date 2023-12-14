@@ -7,17 +7,20 @@ import filterCharacter from "../Search Bar/filterCharacter.js"
 import { useState } from "react"
 import { Button } from "@mui/material"
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux"
 
-const Home = ({ results }) => {
+const Home = () => {
+    let characters = useSelector(state => state.character.characters)
+    characters = [...characters]
     // Sort characters with menu
-    results = sortMenuSelect(results)
+    characters = sortMenuSelect(characters)
 
     // Filter characters by search bar
     const [query, setQuery] = useState('')
     const handleChange = (e) => {
         setQuery(e.target.value)
     }
-    results = filterCharacter(results, query)
+    characters = filterCharacter(characters, query)
 
     return (
         <>
@@ -27,7 +30,7 @@ const Home = ({ results }) => {
                 <SortMenu />
             </div>
             <Link to="/marvel"><Button>Marvel</Button></Link>
-            <AllCharacters characters={results} />
+            <AllCharacters characters={characters} />
         </>
     )
 }

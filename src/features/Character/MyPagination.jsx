@@ -1,4 +1,3 @@
-import { useSelector } from 'react-redux'
 import { Pagination, Stack } from '@mui/material'
 
 
@@ -12,14 +11,14 @@ const MyPagination = ({ charsPerPage, paginate, characters }) => {
                 alignItems: 'center',
                 height: '60px',
                 "& .MuiPaginationItem-root": {
-                    color: "#ffffff",
-                    fontSize: '25px'
+                    color: "white",
+                    fontSize: '25px',
+                    backgroundColor: 'black'
                 }
             }}
         >
             <Pagination
                 count={numberOfPages}
-                color="warning"
                 variant='outlined'
                 size='large'
                 onClick={(e) => paginate(e.target.innerText)}
