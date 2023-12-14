@@ -1,4 +1,4 @@
-import marvel_logo from '../../img/Marvel_Logo.png'
+import DC_logo from '../../img/DC_logo.png'
 import { useSelector } from 'react-redux'
 import AllCharacters from '../Character/AllCharacters'
 import SearchBar from '../Search Bar/SearchBar'
@@ -6,10 +6,10 @@ import SortMenu from '../SortMenu/SortMenu'
 import { useState } from 'react'
 import filterCharacter from '../Search Bar/filterCharacter'
 
-const Marvel = () => {
+const DCComics = () => {
     let characters = useSelector(state => state.character.characters)
     characters = [...characters]
-    characters = characters.filter(item => item.biography.publisher === 'Marvel Comics')
+    characters = characters.filter(item => item.biography.publisher === 'DC Comics')
 
     // Filter characters by search bar
     const [query, setQuery] = useState('')
@@ -19,9 +19,9 @@ const Marvel = () => {
     characters = filterCharacter(characters, query)
 
     return (
-        <div className="marvel">
+        <div className="DC">
             <header className="center">
-                <img src={marvel_logo} alt="" />
+                <img src={DC_logo} alt="" />
             </header>
             <div className="container">
                 <SearchBar onChange={handleChange} query={query} />
@@ -32,4 +32,4 @@ const Marvel = () => {
     )
 }
 
-export default Marvel
+export default DCComics

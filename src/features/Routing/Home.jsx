@@ -30,6 +30,7 @@ const Home = () => {
                 <SortMenu />
             </div>
             <Link to="/marvel"><Button>Marvel</Button></Link>
+            <Link to="/dccomics"><Button>DC Comics</Button></Link>
             <AllCharacters characters={characters} />
         </>
     )
