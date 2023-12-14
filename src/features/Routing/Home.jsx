@@ -5,6 +5,8 @@ import SearchBar from '../Search Bar/SearchBar.jsx'
 import sortMenuSelect from '../SortMenu/sortMenuSelect.js'
 import filterCharacter from "../Search Bar/filterCharacter.js"
 import { useState } from "react"
+import { Button } from "@mui/material"
+import { Link } from "react-router-dom";
 
 const Home = ({ results }) => {
     // Sort characters with menu
@@ -21,9 +23,10 @@ const Home = ({ results }) => {
         <>
             <Header />
             <div className="container">
-                <SearchBar onChange={handleChange} query={query}/>
+                <SearchBar onChange={handleChange} query={query} />
                 <SortMenu />
             </div>
+            <Link to="/marvel"><Button>Marvel</Button></Link>
             <AllCharacters characters={results} />
         </>
     )

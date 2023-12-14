@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import Detail from './features/Routing/Detail.jsx'
 import Home from './features/Routing/Home.jsx';
+import Marvel from './features/Routing/Marvel.jsx';
 
 function App() {
     const characters = useSelector(state => state.character.characters)
@@ -30,6 +31,7 @@ function App() {
         <Router>
             <Routes>
                 <Route exact path="/" element={<Home results={results}/>}/>
+                <Route exact path="/marvel" element={<Marvel />} />
                 <Route exact path="/detail" element={<Detail />} />
             </Routes>
         </Router>

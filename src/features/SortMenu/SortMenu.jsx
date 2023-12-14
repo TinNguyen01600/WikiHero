@@ -27,7 +27,7 @@ const SortMenu = () => {
                 aria-haspopup="true"
                 aria-expanded={open ? 'true' : undefined}
                 onClick={handleClick}
-                sx={{ paddingLeft: '7px', backgroundColor: '#6b6eb0', fontWeight: 'bold' }}
+                sx={{ paddingLeft: '10px', backgroundColor: '#6b6eb0', fontWeight: 'bold' }}
             >
                 <SwapVertIcon />
                 Sort
