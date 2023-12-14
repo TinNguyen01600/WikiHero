@@ -2,8 +2,7 @@ import { useSelector } from 'react-redux'
 import { Pagination, Stack } from '@mui/material'
 
 
-const MyPagination = ({ charsPerPage, paginate }) => {
-    const characters = useSelector(state => state.character.characters)
+const MyPagination = ({ charsPerPage, paginate, characters }) => {
     const numberOfPages = Math.ceil(characters.length / charsPerPage)
 
     return (

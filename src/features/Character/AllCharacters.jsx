@@ -15,7 +15,7 @@ const AllCharacters = ({ characters }) => {
     return (
         <>
             <CharacterGrid characters={currentChars} />
-            <MyPagination charsPerPage={charsPerPage} paginate={paginate}/>
+            <MyPagination charsPerPage={charsPerPage} paginate={paginate} characters={characters}/>
         </>
     )
 }
