@@ -26,15 +26,11 @@ function App() {
     }
 
     /********************************************************************************** */
-    // Select character for detail page
-    const selectedChar = useSelector(state => state.character.selectedChar)
-
-    /********************************************************************************** */
     return (
         <Router>
             <Routes>
                 <Route exact path="/" element={<Home results={results}/>}/>
-                <Route exact path="/detail" element={<Detail char={selectedChar}/>} />
+                <Route exact path="/detail" element={<Detail />} />
             </Routes>
         </Router>
     )

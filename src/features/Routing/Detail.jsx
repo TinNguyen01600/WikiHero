@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
+import { useSelector } from 'react-redux'
 
-const Detail = ({ char }) => {
+const Detail = () => {
+    const char = useSelector(state => state.character.selectedChar)
+
     const alignment =
         char.biography.alignment === "bad"
             ? " villain"

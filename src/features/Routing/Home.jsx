@@ -3,7 +3,7 @@ import AllCharacters from "../Character/AllCharacters"
 import Header from '../../components/Header.jsx'
 import SearchBar from '../Search Bar/SearchBar.jsx'
 import sortMenuSelect from '../SortMenu/sortMenuSelect.js'
-import filterCharacter from "../Search Bar/search.js"
+import filterCharacter from "../Search Bar/filterCharacter.js"
 import { useState } from "react"
 
 const Home = ({ results }) => {
