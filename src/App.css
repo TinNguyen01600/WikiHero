@@ -135,6 +135,19 @@ body {
     margin-left: 40px;
 }
 
+@media (max-width: 1600px) {
+    .detail {
+        display: block;
+        margin-left: 40px;
+    }
+    .detail img {
+        margin: 40px 0 0 0;
+    }
+    .detail-container .Link {
+        margin: 20px 0 0 0;
+    }
+}
+
 /***********************************************************************/
 /* Detail Page text styles */
 .detail-text {

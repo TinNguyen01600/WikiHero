@@ -4,7 +4,6 @@ import { useEffect } from 'react'
 import { fetchAllCharacters } from './features/Character/characterSlice'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-import sortMenuSelect from './features/SortMenu/sortMenuSelect.js'
 import Detail from './features/Routing/Detail.jsx'
 import Home from './features/Routing/Home.jsx';
 
@@ -25,10 +24,6 @@ function App() {
     for (let i = 0; i < results.length; i++) {
         results[i] = { ...results[i], overallPower: overallPower(results[i]) }
     }
-
-    /********************************************************************************** */
-    // Sort characters with menu
-    results = sortMenuSelect(results)
 
     /********************************************************************************** */
     // Select character for detail page
