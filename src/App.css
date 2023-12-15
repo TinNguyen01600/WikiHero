@@ -216,10 +216,15 @@ input {
     background-attachment: fixed;
 }
 @media (max-width: 1600px) {
-    .marvel {
-        height: 320vh;
-    }
-    .DC {
-        height: 320vh;
-    }
+    .marvel {height: 320vh;}
+    .DC {height: 320vh;}
+    .dark-horse {height: 320vh;}
+}
+
+/***********************************************************************/
+/* Button Group */
+.button-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

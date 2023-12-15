@@ -6,7 +6,7 @@ import sortMenuSelect from '../SortMenu/sortMenuSelect.js'
 import filterCharacter from "../Search Bar/filterCharacter.js"
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import MyButtonGroup from "../../components/MyButtonsGroup.jsx"
+import MyButtonsGroup from "../../components/MyButtonsGroup.jsx"
 
 const Home = () => {
     let characters = useSelector(state => state.character.characters)
@@ -28,7 +28,7 @@ const Home = () => {
                 <SearchBar onChange={handleChange} query={query} />
                 <SortMenu />
             </div>
-            <MyButtonGroup />
+            <MyButtonsGroup />
             <AllCharacters characters={characters} />
         </>
     )

@@ -6,6 +6,7 @@ import SortMenu from '../SortMenu/SortMenu'
 import { useState } from 'react'
 import filterCharacter from '../Search Bar/filterCharacter'
 import sortMenuSelect from '../SortMenu/sortMenuSelect'
+import MyButtonsGroup from '../../components/MyButtonsGroup'
 
 const DCComics = () => {
     let characters = useSelector(state => state.character.characters)
@@ -31,6 +32,7 @@ const DCComics = () => {
                 <SearchBar onChange={handleChange} query={query} />
                 <SortMenu />
             </div>
+            <MyButtonsGroup />
             <AllCharacters characters={characters} />
         </div>
     )
