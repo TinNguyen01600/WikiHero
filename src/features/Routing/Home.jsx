@@ -7,8 +7,9 @@ import filterCharacter from "../Search Bar/filterCharacter.js"
 import { useState } from "react"
 import { useSelector } from "react-redux"
 import MyButtonsGroup from "../../components/MyButtonsGroup.jsx"
+import Spinner from "../../components/Spinner.jsx"
 
-const Home = () => {
+const Home = ({ isLoading }) => {
     let characters = useSelector(state => state.character.characters)
     characters = [...characters]
     // Sort characters with menu
@@ -29,7 +30,7 @@ const Home = () => {
                 <SortMenu />
             </div>
             <MyButtonsGroup />
-            <AllCharacters characters={characters} />
+            {isLoading ? <Spinner /> : <AllCharacters characters={characters} />}
         </>
     )
 }

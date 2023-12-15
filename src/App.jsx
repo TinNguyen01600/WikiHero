@@ -1,6 +1,6 @@
 import './App.css'
 import {  useDispatch } from 'react-redux'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { fetchAllCharacters } from './features/Character/characterSlice'
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,15 +12,17 @@ import DarkHorse from './features/Routing/DarkHorse.jsx';
 
 function App() {
     const dispatch = useDispatch()
+    const [isLoading, setIsLoading] = useState(true)
     useEffect(() => {
         dispatch(fetchAllCharacters())
+        setIsLoading(false)
     }, [])
 
     /********************************************************************************** */
     return (
         <Router>
             <Routes>
-                <Route exact path="/" element={<Home />}/>
+                <Route exact path="/" element={<Home isLoading={isLoading}/>}/>
                 <Route exact path="/marvel" element={<Marvel />} />
                 <Route exact path="/dccomics" element={<DCComics />} />
                 <Route exact path="/dark-horse" element={<DarkHorse />} />
