@@ -5,11 +5,15 @@ import SearchBar from '../Search Bar/SearchBar'
 import SortMenu from '../SortMenu/SortMenu'
 import { useState } from 'react'
 import filterCharacter from '../Search Bar/filterCharacter'
+import sortMenuSelect from '../SortMenu/sortMenuSelect'
 
 const Marvel = () => {
     let characters = useSelector(state => state.character.characters)
     characters = [...characters]
     characters = characters.filter(item => item.biography.publisher === 'Marvel Comics')
+
+    // Sort characters with menu
+    characters = sortMenuSelect(characters)
 
     // Filter characters by search bar
     const [query, setQuery] = useState('')

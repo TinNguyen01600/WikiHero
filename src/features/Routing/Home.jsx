@@ -5,9 +5,8 @@ import SearchBar from '../Search Bar/SearchBar.jsx'
 import sortMenuSelect from '../SortMenu/sortMenuSelect.js'
 import filterCharacter from "../Search Bar/filterCharacter.js"
 import { useState } from "react"
-import { Button } from "@mui/material"
-import { Link } from "react-router-dom";
 import { useSelector } from "react-redux"
+import MyButtonGroup from "../../components/MyButtonsGroup.jsx"
 
 const Home = () => {
     let characters = useSelector(state => state.character.characters)
@@ -29,9 +28,7 @@ const Home = () => {
                 <SearchBar onChange={handleChange} query={query} />
                 <SortMenu />
             </div>
-            <Link to="/marvel"><Button>Marvel</Button></Link>
-            <Link to="/dccomics"><Button>DC Comics</Button></Link>
-            <Link to="/dark-horse"><Button>Dark Horse Comics</Button></Link>
+            <MyButtonGroup />
             <AllCharacters characters={characters} />
         </>
     )
